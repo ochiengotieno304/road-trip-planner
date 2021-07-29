@@ -5,9 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>City</th>
-      <th>Lat</th>
-      <th>Lon</th>
+      <th class="td">City</th>
+      <th class="td">Lat</th>
+      <th class="td">Lon</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,12 +15,12 @@
   <tbody>
     <% @locations.each do |location| %>
       <tr>
-        <td><%= location.city %></td>
-        <td><%= location.lat %></td>
-        <td><%= location.lon %></td>
-        <td><%= link_to 'Show', location %></td>
-        <td><%= link_to 'Edit', edit_location_path(location) %></td>
-        <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="td"><%= location.city %></td>
+        <td class="td"><%= location.lat %></td>
+        <td class="td"><%= location.lon %></td>
+        <td class="td"><%= link_to 'Show', location %></td>
+        <td class="td"><%= link_to 'Edit', edit_location_path(location) %></td>
+        <td class="td"><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

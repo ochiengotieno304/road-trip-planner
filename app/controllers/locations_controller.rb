@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+  require 'net/http'
   before_action :set_location, only: %i[ show edit update destroy ]
 
   # GET /locations or /locations.json
@@ -8,6 +9,7 @@ class LocationsController < ApplicationController
 
   # GET /locations/1 or /locations/1.json
   def show
+    set_coordinates()
   end
 
   # GET /locations/new
@@ -17,12 +19,13 @@ class LocationsController < ApplicationController
 
   # GET /locations/1/edit
   def edit
+    set_coordinates()
   end
 
   # POST /locations or /locations.json
   def create
     @location = Location.new(location_params)
-
+    set_coordinates()
     respond_to do |format|
       if @location.save
         format.html { redirect_to @location, notice: "Location was successfully created." }
